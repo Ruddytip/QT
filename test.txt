@@ -1,0 +1,10 @@
+.
+..
+.qmake.stash
+.qtc_clangd
+debug
+Makefile
+Makefile.Debug
+Makefile.Release
+release
+ui_mainwindow.h
