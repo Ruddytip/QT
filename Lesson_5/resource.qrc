@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/infoFiles">
-        <file>info.txt</file>
-    </qresource>
-    <qresource prefix="/Langue">
-        <file>Langue/RUS.txt</file>
-        <file>Langue/ENG.txt</file>
-    </qresource>
-</RCC>
