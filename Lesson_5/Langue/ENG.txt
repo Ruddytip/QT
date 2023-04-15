@@ -1,0 +1,21 @@
+File
+Create a new file
+Open File
+Open read-only
+Save
+Save as
+Correction
+Copy
+Paste
+Cancel
+Clear
+View
+Choose a language
+Russian
+English
+Theme
+Light
+Dark
+Reference
+Show background information
+Keyboard Shortcuts
