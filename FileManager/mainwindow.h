@@ -2,22 +2,34 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "firstmyqtwidget.h"
+#include <QPushButton>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QGridLayout>
+#include <QComboBox>
+#include <QLabel>
+#include "controller.h" // Подключаем класс-контроллер
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
-    FirstMyQtWidget* fmqw;
+    QLineEdit *searchEdit;
+    QPushButton *startFindButton;
+    QTextEdit *infoText;
+    QComboBox *selDrive;
+    Controller *controllerl;
+    QLabel *statusLabel;
+
+private slots:
+    void findFileSlot();
+    void changStatusLabel(QString);
+    void printFindFile(QString);
+
 };
+
 #endif // MAINWINDOW_H
