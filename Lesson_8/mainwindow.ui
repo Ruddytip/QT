@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>595</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Text editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <property name="maxVisibleItems">
+     <number>3</number>
+    </property>
+    <property name="maxCount">
+     <number>3</number>
+    </property>
+    <property name="minimumContentsLength">
+     <number>1</number>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>10</y>
+      <width>121</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Копировать формат</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>121</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Применить формат</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>101</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Выбрать шрифт</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>791</width>
+      <height>511</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Вставить дату и время</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="File">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="CreateNewFile"/>
+    <addaction name="OpenFile"/>
+    <addaction name="OpenFileOnlyRead"/>
+    <addaction name="Save"/>
+    <addaction name="SaveHow"/>
+    <addaction name="Print"/>
+   </widget>
+   <widget class="QMenu" name="Correction">
+    <property name="title">
+     <string>Правка</string>
+    </property>
+    <addaction name="Copy"/>
+    <addaction name="Paste"/>
+    <addaction name="Undo"/>
+    <addaction name="Clear"/>
+   </widget>
+   <widget class="QMenu" name="View">
+    <property name="title">
+     <string>Вид</string>
+    </property>
+    <widget class="QMenu" name="Langue">
+     <property name="title">
+      <string>Выбрать язык</string>
+     </property>
+     <addaction name="Rus"/>
+     <addaction name="Eng"/>
+    </widget>
+    <widget class="QMenu" name="Theme">
+     <property name="title">
+      <string>Тема</string>
+     </property>
+     <addaction name="Light"/>
+     <addaction name="Dark"/>
+    </widget>
+    <addaction name="Langue"/>
+    <addaction name="Theme"/>
+   </widget>
+   <widget class="QMenu" name="Info">
+    <property name="title">
+     <string>Справка</string>
+    </property>
+    <addaction name="ShowInfo"/>
+    <addaction name="Binds"/>
+   </widget>
+   <addaction name="File"/>
+   <addaction name="Correction"/>
+   <addaction name="View"/>
+   <addaction name="Info"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="CreateNewFile">
+   <property name="text">
+    <string>Создать новый файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="OpenFile">
+   <property name="text">
+    <string>Открыть файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="OpenFileOnlyRead">
+   <property name="text">
+    <string>Открыть только для чтения</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
+   </property>
+  </action>
+  <action name="Save">
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="SaveHow">
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="Copy">
+   <property name="text">
+    <string>Копировать</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="Paste">
+   <property name="text">
+    <string>Вставить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="Undo">
+   <property name="text">
+    <string>Отменить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="Clear">
+   <property name="text">
+    <string>Очистить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="ShowInfo">
+   <property name="text">
+    <string>Показать справочную информацию</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="Binds">
+   <property name="text">
+    <string>Сочетания клавиш</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="Rus">
+   <property name="text">
+    <string>Русский</string>
+   </property>
+  </action>
+  <action name="Eng">
+   <property name="text">
+    <string>Английский</string>
+   </property>
+  </action>
+  <action name="Light">
+   <property name="text">
+    <string>Светлая</string>
+   </property>
+  </action>
+  <action name="Dark">
+   <property name="text">
+    <string>Тёмная</string>
+   </property>
+  </action>
+  <action name="Print">
+   <property name="text">
+    <string>Печать</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
