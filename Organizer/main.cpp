@@ -1,12 +1,13 @@
-#include <QGuiApplication>
+#include <QApplication >
 #include <QQmlApplicationEngine>
+#include "FileInfoSave.hpp"
 
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -15,6 +16,9 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+
+    qmlRegisterType<FileInfoSave>("FileInfoSave", 1, 0, "FileInfoSave");
+
     engine.load(url);
 
     return app.exec();

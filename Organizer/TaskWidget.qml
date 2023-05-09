@@ -2,27 +2,14 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.3
+import FileInfoSave 1.0
 
 GridLayout{
     columns: 4
     rows: 2
-    property string fileName: "file:///D:/Develop/Source/QT/Tasks.txt"
-    property string textData: ""
-
-    function openFile(fileUrl) {
-        var request = new XMLHttpRequest();
-        request.open("GET", fileUrl, false);
-        request.send(null);
-        return request.responseText;
+    FileInfoSave{
+        id: file
     }
-
-    function saveFile(fileUrl, text) {
-        var request = new XMLHttpRequest();
-        request.open("PUT", fileUrl, false);
-        request.send(text);
-        return request.status;
-    }
-
     Text{
         text: qsTr("Название задачи")
         Layout.column: 0
@@ -39,7 +26,8 @@ GridLayout{
         Layout.row: 0
     }
     Text{
-        text: qsTr("")
+        id: count_tsk
+        text: qsTr("(" + file.getCountTasks() + " Задач)")
         Layout.column: 3
         Layout.row: 0
     }
@@ -79,11 +67,12 @@ GridLayout{
         Layout.row: 1
         text: "Создать"
         onClicked: {
-            textData = openFile(fileName)
-            textData += taskName.text + ": "
-            textData += taskDate.text + " -> "
-            textData += combo.currentText + "/10\n"
-            saveFile(fileName, textData)
+            if(file.addTask(taskName.text, taskDate.text, combo.currentText)){
+                taskName.text = ""
+                taskDate.text = ""
+                combo.currentIndex = 0
+                count_tsk.text = qsTr("(" + file.getCountTasks() + " Задач)")
+            }
         }
     }
 }
