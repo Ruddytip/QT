@@ -5,9 +5,10 @@
 #include <algorithm>
 
 FileInfoSave::FileInfoSave(QObject *parent)
-    : QObject{parent}, TasksCountInFile(0), fileName(""), data("")
+    : QObject{parent}, TasksCountInFile(0), data("")
 {
     //Q_INIT_RESOURCE(qml);
+    //QFile file(":/Tasks.txt");
     QFile file("D:/Develop/Source/QT/Organizer/Tasks.txt");
     if(!file.open(QFile::ReadOnly)) return;
 

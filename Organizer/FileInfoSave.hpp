@@ -6,14 +6,7 @@
 class FileInfoSave : public QObject {
     Q_OBJECT
 private:
-    struct TaskOrganizer{
-        QString TaskName;
-        QString Data;
-        QString Progress;
-    };
-    std::vector<TaskOrganizer> Tasks;
     unsigned int TasksCountInFile;
-    QString fileName;
     QString data;
 
 public:
