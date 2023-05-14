@@ -1,12 +1,13 @@
-QT += quick core gui widgets
+QT += quick core gui widgets sql
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        FileInfoSave.cpp \
-        main.cpp
+        database.cpp \
+        main.cpp \
+        taskviewer.cpp
 
 RESOURCES += qml.qrc
 
@@ -24,6 +25,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 HEADERS += \
-    FileInfoSave.hpp
+    database.hpp \
+    taskviewer.h
 
-FORMS +=
+FORMS += \
+    taskviewer.ui

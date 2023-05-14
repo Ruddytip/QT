@@ -1,9 +1,8 @@
 #include <QApplication >
 #include <QQmlApplicationEngine>
-#include "FileInfoSave.hpp"
+#include "database.hpp"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
@@ -17,7 +16,7 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
-    qmlRegisterType<FileInfoSave>("FileInfoSave", 1, 0, "FileInfoSave");
+    qmlRegisterType<DataBase>("DataBase", 1, 0, "DataBase");
 
     engine.load(url);
 

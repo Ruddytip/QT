@@ -2,13 +2,13 @@ import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.3
-import FileInfoSave 1.0
+import DataBase 1.0
 
 GridLayout{
-    columns: 4
+    columns: 5
     rows: 2
-    FileInfoSave{
-        id: file
+    DataBase{
+        id: db
     }
     Text{
         text: qsTr("Название задачи")
@@ -27,8 +27,8 @@ GridLayout{
     }
     Text{
         id: count_tsk
-        text: qsTr("(" + file.getCountTasks() + " Задач)")
-        Layout.column: 3
+        text: qsTr("Количество задач: " + db.getCountTasks())
+        Layout.column: 4
         Layout.row: 0
     }
     TextField{
@@ -67,12 +67,20 @@ GridLayout{
         Layout.row: 1
         text: "Создать"
         onClicked: {
-            if(file.addTask(taskName.text, taskDate.text, combo.currentText)){
+            if(db.add(taskName.text, taskDate.text, combo.currentText)){
                 taskName.text = ""
                 taskDate.text = ""
                 combo.currentIndex = 0
-                count_tsk.text = qsTr("(" + file.getCountTasks() + " Задач)")
+                count_tsk.text = qsTr("Количество задач: " + db.getCountTasks())
             }
+        }
+    }
+    Button {
+        Layout.column: 4
+        Layout.row: 1
+        text: "Показать список задач"
+        onClicked: {
+            db.openWindow()
         }
     }
 }
